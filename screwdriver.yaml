@@ -1,0 +1,13 @@
+shared:
+    image: node:18
+
+jobs:
+  A:
+    environment:
+      USER_SHELL_BIN: bash
+    requires: [~pr, ~commit]
+    steps:
+      - ok: echo ok
+      - gen-logs: |
+         pwd
+         bash ./gen-log.sh

@@ -11,3 +11,6 @@ jobs:
       - gen-logs: |
          pwd
          bash ./gen-log.sh
+      - gen-logs2: |
+         pwd
+         bash ./gen-log.sh

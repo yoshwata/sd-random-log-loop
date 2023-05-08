@@ -42,9 +42,12 @@ do
   count=$((count + 1))
 done
 
+runtime="5 minute"
+endtime=$(date -ud "$runtime" +%s)
 
-while true
+while [[ $(date -u +%s) -le $endtime ]]
 do
+    echo "Time Now: `date +%H:%M:%S`"
     random_ip=$(dd if=/dev/urandom bs=4 count=1 2>/dev/null | od -An -tu1 | sed -e 's/^ *//' -e 's/  */./g')
     random_size=$(( (RANDOM % 65535) + 1 ))
 
@@ -53,4 +56,6 @@ do
     echo "$random_ip - - [$current_date_time] \"GET /data.php HTTP/1.1\" 200 $random_size" | tee -a 'random_log'
 
     sleep $[ ( $RANDOM % 10 )  + 1 ]s
+    echo "Sleeping for 10 seconds"
+    sleep 10
 done

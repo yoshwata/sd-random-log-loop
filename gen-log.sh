@@ -58,5 +58,5 @@ do
 
     sleep $[ ( $RANDOM % 10 )  + 1 ]s
     echo "Sleeping for 10 seconds"
-    sleep 10
+    sleep 0.2
 done

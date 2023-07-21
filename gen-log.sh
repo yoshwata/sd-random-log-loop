@@ -57,6 +57,6 @@ do
     echo "$random_ip - - [$current_date_time] \"GET /data.php HTTP/1.1\" 200 $random_size" | tee -a 'random_log'
 
     sleep $[ ( $RANDOM % 10 )  + 1 ]s
-    echo "Sleeping for 0.1 seconds"
-    sleep 0.1
+    echo "Sleeping for 0.025 seconds"
+    sleep 0.025
 done

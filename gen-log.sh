@@ -43,7 +43,7 @@
 #   count=$((count + 1))
 # done
 
-runtime="30 minute"
+runtime="2 minute"
 endtime=$(date -ud "$runtime" +%s)
 
 while [[ $(date -u +%s) -le $endtime ]]
